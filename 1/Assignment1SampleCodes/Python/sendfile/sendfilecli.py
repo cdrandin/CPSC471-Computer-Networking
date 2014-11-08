@@ -56,7 +56,6 @@ while True:
 		while len(dataSizeStr) < 10:
 			dataSizeStr = "0" + dataSizeStr
 	
-	
 		# Prepend the size of the data to the
 		# file data.
 		fileData = dataSizeStr + fileData	
