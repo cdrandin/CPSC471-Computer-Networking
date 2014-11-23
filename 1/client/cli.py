@@ -4,10 +4,7 @@ import os
 import sys
 import cPickle as pickle
 
-def enum(**enums):
-    return type('Enum', (), enums)
-
-COMMANDS = enum(UNDEFINED = 0, QUIT = 1, PUT = 2, GET = 3, LS = 4)
+COMMANDS = (lambda **enums: type('Enum', (), enums))(UNDEFINED = 0, QUIT = 1, PUT = 2, GET = 3, LS = 4)
 
 def clearScreen():
     os.system('clear')

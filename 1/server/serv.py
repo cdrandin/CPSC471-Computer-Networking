@@ -5,10 +5,7 @@ import sys
 import cPickle as pickle
 import commands
 
-def enum(**enums):
-    return type('Enum', (), enums)
-
-COMMANDS = enum(UNDEFINED = 0, QUIT = 1, PUT = 2, GET = 3, LS = 4)
+COMMANDS = (lambda **enums: type('Enum', (), enums))(UNDEFINED = 0, QUIT = 1, PUT = 2, GET = 3, LS = 4)
 
 # Get what was sent correctly. Returning what ever pickled object was sent over the network
 def unpackInfo(clientSocket):
